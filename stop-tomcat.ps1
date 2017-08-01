@@ -24,6 +24,6 @@ if($tomcatService.Status -ne "Stopped") {
 Write-Host "Tomcat is not running. Nothing to stop."
 }
 
-$tc7pr =  (get-process Tomcat7).id
-stop-process -id $tc7pr
-wait-process -id $tc7pr
+$tc7pr =  (Get-Process Tomcat7).id
+Stop-Process -Id $tc7pr -Force
+Wait-Process -Id $tc7pr
