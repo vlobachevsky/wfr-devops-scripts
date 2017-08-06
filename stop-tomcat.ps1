@@ -1,5 +1,6 @@
 if ($env:PROCESSOR_ARCHITEW6432 -eq "AMD64") {
-    Write-Log -level warning "changing from 32bit to 64bit powershell"
+    #Write-Log -level warning "changing from 32bit to 64bit powershell"
+    Write-Host "changing from 32bit to 64bit powershell"
     $powershell=join-path $PSHOME.tolower().replace("syswow64","sysnative").replace("system32","sysnative") powershell.exe
     if ($myInvocation.Line) {
         &"$powershell" -NonInteractive -NoProfile -ExecutionPolicy Bypass $myInvocation.Line
